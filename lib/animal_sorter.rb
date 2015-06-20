@@ -12,3 +12,37 @@
 # should include the sea creatures, the second, land animals.
 
 # Read the test suite for an example of a nested array.
+
+class AnimalSorter
+
+  SEA_ANIMALS = ["marlin", "octopus", "fish"]
+  LAND_ANIMALS = ["aardvark", "cat", "elephant"]
+  attr_reader :animal_array
+
+  def initialize(animal_array)
+    @animal_array = animal_array
+  end
+
+
+
+
+  def to_a
+    land = []
+    sea = []
+    @animal_array.each do |x|
+      SEA_ANIMALS.each do |y|
+        if x == y
+          sea << x
+        end
+      end
+      LAND_ANIMALS.each do |z|
+        if x == z
+          land << x
+        end
+      end
+    end 
+    return sea, land
+  end
+
+
+end
