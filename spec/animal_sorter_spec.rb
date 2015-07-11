@@ -1,6 +1,7 @@
 describe "AnimalSorter" do
 
-  describe "LAND_ANIMALS" do
+  describe "LAND_ANIMALS" do     
+    
     it "is a constant in the AnimalSorter class" do
       expect { AnimalSorter::LAND_ANIMALS }.to_not raise_error
     end
@@ -8,8 +9,10 @@ describe "AnimalSorter" do
       expect(AnimalSorter::LAND_ANIMALS.class).to eq(Array)
     end
     it "contains strings of land animals" do
-      ["aardvark", "cat", "elephant"].each do |land_animal|
-        expect(AnimalSorter::LAND_ANIMALS).to include(land_animal)
+      land_beasts = ["aardvark", "cat", "elephant"]
+      land_beasts.each do |animalLand|
+        AnimalSorter.new(land_beasts).to_a
+        expect(AnimalSorter::LAND_ANIMALS).to include(animalLand)
       end
     end
   end
@@ -21,9 +24,11 @@ describe "AnimalSorter" do
     it "is an array" do
       expect(AnimalSorter::SEA_ANIMALS.class).to eq(Array)
     end
-    it "contains strings of land animals" do
-      ["marlin", "octopus", "fish"].each do |sea_animal|
-        expect(AnimalSorter::SEA_ANIMALS).to include(sea_animal)
+    it "contains strings of sea animals" do
+      sea_beasts = ["marlin", "octopus", "fish"]
+        sea_beasts.each do |animalSea|
+        AnimalSorter.new(sea_beasts).to_a
+        expect(AnimalSorter::SEA_ANIMALS).to include(animalSea)
       end
     end
   end
